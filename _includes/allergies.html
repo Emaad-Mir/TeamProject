@@ -1,0 +1,45 @@
+<input id = "allergies" type="text" name="allergies" placeholder="Enter your food allergies here..." required>
+
+<button onclick="findResult()">See Some Alternatives!</button>
+
+<p id="display">Your alternatives are ....</p>
+
+<script>
+
+function findAlternative(food){
+    food = food.toUpperCase();
+    switch(food){
+        case "EGGS": 
+        case "EGG":
+            return ["Applesauce", "Flaxseed", "Yogurt", "Buttermilk", "Mashed Bananas"];
+        case "MILK":
+            return ["Almond Milk", "Cashew Milk", "Oat Milk", "Soy Milk", "Lactose Free Milk"];
+        case "MEAT":
+            return ["Beans", "Cereals and Grains", "Nuts", "Seeds", "Quinoa", "Pulses"];
+        case "NUTS":
+            return ["Olives", "Pumpkin Seeds", "Sunflower Seeds", "Avocados"];
+        case "GLUTEN":
+            return ["Buckwheat", "Almond Meal (Flour)", "Coconut Flour", "Cornstarch", "Potato", "Rice"]
+        default:
+            return "";
+    }
+}
+
+function findResult(){
+    const userInput = document.getElementById("allergies").value;
+    let allergyArray = userInput.split(",");
+
+    let finalArray = []
+    
+    for(let i = 0; i < allergyArray.length; i++){
+        finalArray.push(findAlternative(allergyArray[i].trim()));
+    }
+
+    let alternativesString = "";
+    for(let i = 0; i < allergyArray.length; i++){
+        alternativesString += "Alternatives for " + allergyArray[i].trim() + ": " + finalArray[i].join(", ") + "<br>";    }
+
+    document.getElementById("display").innerHTML = alternativesString;
+}
+
+</script>
