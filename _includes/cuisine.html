@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Finder</title>
+</head>
+<body>
+  <h1>Restaurant Finder</h1>
+  <p>Enter a cuisine:</p>
+  <input type="text" id="cuisine-input">
+  <button onclick="findRestaurant()">Find Restaurant</button>
+  <p id="output"></p>
+
+  <script>
+    function findRestaurant() {
+      const cuisine = document.getElementById('cuisine-input').value;
+      const restaurants = {
+        'Italian': ['Olive Garden', 'Carrabbas Italian Grill'],
+        'Chinese': ['P.F. Changs', 'Pei Wei'],
+        'Mexican': ['Chipotle', 'Taco Bell'],
+        'American': ['Applebees', 'Dennys'],
+      };
+
+      const output = restaurants[cuisine] || 'No restaurants found';
+      document.getElementById('output').innerHTML = output;
+    }
+  </script>
+</body>
+</html>
