@@ -1,0 +1,24 @@
+
+  
+<p><button onclick="findResult('Pizza')">Pizza</button></p>
+<p id="Pizza">Pizza Facts!</p>
+<p><button onclick="findResult('Cookies')">Cookies</button></p>
+<p id="Cookies">Cookie Facts!</p>
+<p><button onclick="findResult('Rice')">Rice</button></p>
+<p id="Rice">Rice Facts!</p>
+<p><button onclick="findResult('Tacos')">Tacos</button></p>
+<p id="Tacos">Taco Facts!</p>
+<script>
+  function findResult(food){
+  let facts = {"Pizza":["ABOUT 350 SLICES OF PIZZA ARE CONSUMED EVERY SECOND IN THE US","93% OF AMERICANS ORDER A PIZZA AT LEAST ONCE A MONTH",
+  "PEPPERONI IS AMERICA’S FAVOURITE PIZZA TOPPING","PIZZA CONSUMPTION IS HIGHEST DURING BIG GAME DAYS","PIZZA WAS FIRST DEVELOPED AS AN EASY AND AFFORDABLE MEAL FOR LOW-INCOME FAMILIES"],
+  "Cookies":["Introduced in 1902, the animal cracker was the first commercial cookie in the U.S.","The average American will eat 35,000 cookies in their lifetime.",
+  "The world’s largest chocolate chip cookie weighed in at more than 40,000 pounds! This cookie was 102-feet-wide and was baked by the Immaculate Baking Company in Flat Rock, North Carolina in 2003. The company built a special oven to make the larger than life cookie.",
+  "Chocolate chip cookies were a popular item to put in soldiers’ care packages during WWII.","Real estate agents have been using fresh baked cookies to help give homes a comforting smell and sell them faster for decades."],
+  "Rice":["The Great Wall of China is held together with sticky rice.","All white rice starts brown.","Rice is grown on every continent except Antarctica.","Americans eat more than 26 pounds of rice every year.",
+  "The largest bowl of fried rice was fed to pigs."],
+  "Tacos":["October 4th is Taco Day","Taco is translated as 'light lunch'","The first-ever food truck was probably a taco truck","Tacos Have been around for millenia","Taco Bell popularized them in the USA"]};
+  let toReturn = "Did You Know: "+facts[food][Math.floor(Math.random()*facts[food].length)];
+  document.getElementById(food).innerHTML = toReturn;
+  }
+</script>
