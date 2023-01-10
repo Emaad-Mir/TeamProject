@@ -1,0 +1,2 @@
+# Restaurants
+{% include restaurants.html %}
